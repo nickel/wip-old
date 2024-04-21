@@ -59,6 +59,7 @@ group :development do
   gem "brakeman"
   gem "bundler-audit"
   gem "foreman"
+  gem "packwerk"
   gem "rubocop"
   gem "web-console"
 
