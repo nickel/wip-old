@@ -46,6 +46,9 @@ jobs:
       - name: Check vulnerable gems
         run: bin/check-vulnerable-gems
 
+      - name: Check code boundaries offenses
+        run: bin/check-packages-boundaries
+
       - name: Run Tests
         env:
           RAILS_ENV: "test"
