@@ -8,8 +8,7 @@ module Factory
       .call(**{ name: "My wonderful project",
                 description: "Lorem ipsum dolor sit amet",
                 type: "service",
-                topics: ["Ruby", "Ruby on Rails"],
-                tags: "note" }.merge(input))
+                topics: ["Ruby", "Ruby on Rails"] }.merge(input))
       .value!
   end
 end

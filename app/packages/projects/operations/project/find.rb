@@ -5,16 +5,18 @@ class Project::Find < CommandHandler::Command
     include CommandHandler::Form
 
     attribute :id, :integer
+
+    validates :id, presence: true
   end
 
   delegate(*Form.new.attributes.keys, to: :form)
 
-  def call
+  def execute
     if (project = Project.find_by(id:))
       Response.success(project.to_struct)
     else
       Response.failure(
-        Errors::RecordNotFoundError
+        CommandHandler::Errors::RecordNotFoundError
           .build(form:)
       )
     end
