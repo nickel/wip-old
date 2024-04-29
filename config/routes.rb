@@ -3,10 +3,8 @@
 Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Package accounts
-  post   "login"  => "login#create"
-  delete "logout" => "login#destroy"
+  post   "login"  => "accounts/session#create"
+  delete "logout" => "accounts/session#destroy"
 
-  # Package landing
-  root "welcome#index"
+  root "landing/welcome#index"
 end

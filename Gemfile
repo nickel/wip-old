@@ -31,6 +31,7 @@ group :development do
   gem "bundler-audit"
   gem "foreman"
   gem "packwerk"
+  gem "packwerk-extensions"
   gem "rubocop"
   gem "web-console"
 end

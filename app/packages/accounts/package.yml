@@ -1,3 +1,5 @@
-enforce_dependencies: strict
+enforce_privacy: true
+enforce_dependencies: true
+public_path: public
 dependencies:
   - app/packages/_platform
