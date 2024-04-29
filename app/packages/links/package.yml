@@ -1,3 +1,0 @@
-enforce_dependencies: true
-dependencies:
-  - app/packages/_platform

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class ProjectsController < ApplicationController
-  def index
+module Projects
+  class ProjectsController < ApplicationController
+    def index
+    end
   end
 end

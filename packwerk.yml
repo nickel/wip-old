@@ -2,15 +2,15 @@
 # https://github.com/Shopify/packwerk/blob/main/USAGE.md#configuring-packwerk
 
 # List of patterns for folder paths to include
-# include:
-# - "**/*.{rb,rake,erb}"
+include:
+- "**/*.{rb,rake,erb}"
 
 # List of patterns for folder paths to exclude
-# exclude:
-# - "{bin,node_modules,script,tmp,vendor,test}/**/*"
+exclude:
+- "{bin,node_modules,script,tmp,vendor,test}/**/*"
 
 # Patterns to find package configuration files
-# package_paths: "**/"
+package_paths: "**/"
 
 # List of custom associations, if any
 # custom_associations:
@@ -21,3 +21,6 @@
 
 # Where you want the cache to be stored (default below)
 # cache_directory: 'tmp/cache/packwerk'
+
+require:
+  - packwerk-extensions

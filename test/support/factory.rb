@@ -4,7 +4,7 @@ module Factory
   module_function
 
   def generate_project(**input)
-    Project::Create
+    Projects::Project::Create
       .call(**{ name: "My wonderful project",
                 description: "Lorem ipsum dolor sit amet",
                 type: "service",

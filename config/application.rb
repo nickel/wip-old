@@ -18,7 +18,11 @@ module Wip
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
-    config.paths.add "app/packages", glob: "*/{*,*/concerns}", eager_load: true
+    config.paths.add "app/platform", glob: "{*,*/concerns}", eager_load: true
+
+    %w(controllers models public operations views).each do |dir|
+      Rails.autoloaders.main.collapse(Rails.root.join("app/packages/*/#{dir}"))
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

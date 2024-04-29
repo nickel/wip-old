@@ -1,3 +1,4 @@
-enforce_dependencies: true
+enforce_privacy: strict
+enforce_dependencies: strict
 dependencies:
-  - app/packages/_platform
+  - app/platform
