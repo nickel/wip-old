@@ -1,24 +1,26 @@
 # frozen_string_literal: true
 
-class Project::Find < CommandHandler::Command
-  class Form
-    include CommandHandler::Form
+module Projects
+  class Project::Find < CommandHandler::Command
+    class Form
+      include CommandHandler::Form
 
-    attribute :id, :integer
+      attribute :id, :integer
 
-    validates :id, presence: true
-  end
+      validates :id, presence: true
+    end
 
-  delegate(*Form.new.attributes.keys, to: :form)
+    delegate(*Form.new.attributes.keys, to: :form)
 
-  def execute
-    if (project = Project.find_by(id:))
-      Response.success(project.to_struct)
-    else
-      Response.failure(
-        CommandHandler::Errors::RecordNotFoundError
-          .build(form:)
-      )
+    def execute
+      if (project = Project.find_by(id:))
+        Response.success(project.to_struct)
+      else
+        Response.failure(
+          CommandHandler::Errors::RecordNotFoundError
+            .build(form:)
+        )
+      end
     end
   end
 end
